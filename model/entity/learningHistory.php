@@ -47,21 +47,15 @@
             }
             return $rs;
         }
-        static function getLastId(){
-            /*  
-                + Truy cập file và truyền giá trị vào mảng lines:
-                    $lines = file("../resource/learninghistory.txt", FILE_IGNORE_NEW_LINES);
-                + Đếm số phần tử mảng:
-                    count($lines);
-                + Lấy phần tử cuối cùng:
-                    $lastEle = $lines[count($lines)-1];
-                + Tách id từ phần từ phần tử cuối cùng
-                + chuyển kiểu và tăng giá trị id lên 1, đây sẽ giá trị duy nhất -> dễ tái sử dụng sau này 
-            */
+        static function addStudentHistory($yearFrom, $yearTo, $schoolName, $schoolAddress){
             $lines = file("../resource/learninghistory.txt", FILE_IGNORE_NEW_LINES);
             $strId= (string)(explode("#",$lines[count($lines)-1])[0]+1)  ;
-             
-            return ($strId= "" ?"0":$strId);
+            
+            $fp = fopen("../resource/learninghistory.txt","a+") ;
+            
+            fwrite($fp,"\n".implode("#",array($strId,$yearFrom,$yearTo,$schoolName,$schoolAddress,"101")));
+            $schoolName = $yearFrom = $yearTo = $schoolAddress = "";
+            fclose($fp);
         }
     }
 ?>
