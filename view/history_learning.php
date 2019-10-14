@@ -2,8 +2,7 @@
 include_once("header.php");
 include_once("nav.php");
 include_once("../model/entity/learningHistory.php");
-//$rs = LearningHistory::getList('1');
-$lines = LearningHistory::getListFromFile('101');
+$lines = LearningHistory::getListFromFile('16T1021222');
 
 ?>
 <div class="container-fluid">
@@ -46,7 +45,7 @@ $lines = LearningHistory::getListFromFile('101');
 </div>
 
 <?php
-include_once("create_dialog_learninghistory.php"); 
+include_once("create_dialog_history_learning.php"); 
 ?>
 
 <?php

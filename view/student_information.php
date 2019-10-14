@@ -18,7 +18,6 @@ include_once("nav.php");
                 // echo "<h1>Email không hợp lệ.</h1>";
             }
             
-            var_dump($_FILES);
             if ($_FILES["fileAnhDaiDien"]["name"] != "") {
                 echo "Đã Upload File";
                 // code save file to server

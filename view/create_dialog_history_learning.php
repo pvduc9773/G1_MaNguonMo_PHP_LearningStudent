@@ -10,7 +10,7 @@
         if (!empty($schoolName) && !empty($yearFrom) && !empty($yearTo) && !empty($schoolAddress)) {
             LearningHistory::addStudentHistory($yearFrom, $yearTo, $schoolName, $schoolAddress);
             echo "<script>
-                    location.href = 'QuaTrinhHocTap.php';
+                    location.href = 'history_learning.php';
                 </script>";
         }
     }   
